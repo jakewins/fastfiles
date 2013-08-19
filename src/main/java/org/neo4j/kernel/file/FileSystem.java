@@ -8,8 +8,6 @@ import java.io.IOException;
 
 public interface FileSystem
 {
-
-
     public enum OpenMode
     {
         READ,

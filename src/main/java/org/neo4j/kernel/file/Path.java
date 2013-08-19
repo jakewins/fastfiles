@@ -6,4 +6,5 @@ package org.neo4j.kernel.file;
 
 public interface Path
 {
+    Path toAbsolutePath();
 }

@@ -1,8 +1,5 @@
 package org.neo4j.kernel.store;
 
-import static java.lang.String.format;
-import static org.neo4j.kernel.file.FileSystem.OpenMode.READ_AND_WRITE;
-
 import java.io.IOException;
 
 import org.neo4j.kernel.file.File;
@@ -10,11 +7,12 @@ import org.neo4j.kernel.file.FileSystem;
 import org.neo4j.kernel.file.Page;
 import org.neo4j.kernel.file.Path;
 
+import static java.lang.String.format;
+import static org.neo4j.kernel.file.FileSystem.OpenMode.READ_AND_WRITE;
+
 /**
- * A store provides storage of Items, where an item is an arbitrary set of data. The item can be of arbitrary size,
- * although no larger than {@link #maxItemSize()}.
- *
- * Note that this is a toy, used for trying things out.
+ * A store provides storage of Items in Pages, where a Page is a fixed-size block of a file which contains zero or more
+ * items of arbitrary size, although no item can be larger than {@link #maxItemSize()}.
  */
 public class Store
 {

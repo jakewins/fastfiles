@@ -15,4 +15,16 @@ public class NioBackedPath implements Path
     {
         return nioPath;
     }
+
+    @Override
+    public String toString()
+    {
+        return nioPath.toString();
+    }
+
+    @Override
+    public Path toAbsolutePath()
+    {
+        return new NioBackedPath( nioPath.toAbsolutePath() );
+    }
 }

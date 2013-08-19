@@ -1,9 +1,5 @@
 package org.neo4j.kernel.file.unsafe;
 
-import static java.nio.file.Files.newByteChannel;
-import static java.nio.file.StandardOpenOption.READ;
-import static java.nio.file.StandardOpenOption.WRITE;
-
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
@@ -11,6 +7,10 @@ import org.neo4j.kernel.file.File;
 import org.neo4j.kernel.file.FileSystem;
 import org.neo4j.kernel.file.Page;
 import org.neo4j.kernel.file.nio.NioBackedPath;
+
+import static java.nio.file.Files.newByteChannel;
+import static java.nio.file.StandardOpenOption.READ;
+import static java.nio.file.StandardOpenOption.WRITE;
 
 public class UnsafeBackedFile implements File
 {

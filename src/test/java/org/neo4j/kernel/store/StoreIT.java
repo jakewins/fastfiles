@@ -1,10 +1,5 @@
 package org.neo4j.kernel.store;
 
-import static java.nio.channels.FileChannel.MapMode.READ_WRITE;
-import static java.nio.file.Files.newByteChannel;
-import static java.nio.file.StandardOpenOption.READ;
-import static java.nio.file.StandardOpenOption.WRITE;
-
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -17,6 +12,11 @@ import org.neo4j.kernel.file.FileSystem;
 import org.neo4j.kernel.file.Page;
 import org.neo4j.kernel.file.unsafe.UnsafeBackedFileSystem;
 import org.neo4j.kernel.util.BytePrinter;
+
+import static java.nio.channels.FileChannel.MapMode.READ_WRITE;
+import static java.nio.file.Files.newByteChannel;
+import static java.nio.file.StandardOpenOption.READ;
+import static java.nio.file.StandardOpenOption.WRITE;
 
 public class StoreIT
 {
@@ -42,8 +42,6 @@ public class StoreIT
     {
         store.stop();
         store.shutdown();
-
-//        dump( Paths.get( ".", "myStore" ) );
     }
 
     @Test
